@@ -50,12 +50,24 @@ var commentTree = {
 
 var currentQuestion = 1;
 
+var encouragingCount = 0;
+var funnyCount = 0;
+var neutralCount = 0;
+var angryCount = 0;
+var inappropriateCount = 0;
+var nonsenseCount = 0;
+
 
 function run(){
 		console.log(imageTree[currentQuestion]['display_src']);
 		console.log(document.getElementById("display_comment").innerHTML);
 		document.getElementById('display_image').src = imageTree[currentQuestion]['display_src'];
 		document.getElementById('display_comment').innerHTML = commentTree[currentQuestion]['comment_str'];		
+}
+
+function displayResults()
+{
+	
 }
 
 
@@ -76,7 +88,13 @@ function reactionSubmit(reaction){
 }
 
 function updateRecords(reaction){
-	
+	switch (reaction)
+	{
+		case "encouraging": ++encouragingCount
+		                    break;
+		case "funny": ++funnyCount
+		              break;
+	}
 }
 
 
