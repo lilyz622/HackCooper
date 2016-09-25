@@ -1,7 +1,37 @@
 #display_image {
-	height: 500px;
+	position: float;
+	display: block;
+	margin: auto;
+	height: 400px;
+	width: 500px;
+	left: 250px;
+}
+
+#display_comment {
 	width: 500px;
 	display: block;
 	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: 'white';
 }
 
+#option2 {
+	position: absolute; 
+	right: 900px;
+}
+
+body {
+  background: #e2e1e0;
+  text-align: center;
+}
+
+.wrapper {
+	padding-top: 0px;
+	padding-bottom: 10px;
+	background-color: 'white';
+}
+
+.card-2 {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
