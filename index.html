@@ -22,17 +22,11 @@ div.comment_space {
 }
 </style>
 
-<script>
-<!-- function myFunction() {
- <!--   var x = document.getElementById("option2").value;
- <!--   document.getElementById("demo").innerHTML = x;
-<!--}
-</script>
 
 </head>
 
 <body>
-
+	
 	<img src="pics/sunset.jpg" alt="Display Picture" id="display_image">
 	<div class="mdl-layout-spacer"></div>
 
@@ -40,7 +34,7 @@ div.comment_space {
 	<div class = "reaction_choices">
 
 			<label class="mdl-radio mdl-js-radio" for="option2">
-			    <input type = "radio" id="option2" name="describe" value="encouraging" class = "mdl-radio__button"> 
+			    <input type = "radio" id="option2" onclick='setTimeout(reactionSubmit("ENCOURAGING"),30000)' name="describe" value="encouraging" class = "mdl-radio__button"> 
 				<span class="mdl-radio__label">Encouraging</span>
 			</label>
 			
@@ -69,8 +63,16 @@ div.comment_space {
 			    <span class="mdl-radio__label">Nonsense</span>
 			</label>
 			
+
+			
 	</div>
+	
+	<div id = "display_comment">test
+	</div>
+	
+	<button
 	<!--<button onclick="myFunction()">Show Encouraging</button>
 	<p id="demo"></p> -->
+	<script src='master.js'></script>
 </body>
 </html>
