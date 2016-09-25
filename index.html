@@ -6,28 +6,60 @@
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">	  
-   
+   <style>
+div.reaction_choices {
+    position: fixed;
+    left: 30%;
+    text-aign: center;
+}
+</style>
+<script>
+<!-- function myFunction() {
+ <!--   var x = document.getElementById("option2").value;
+ <!--   document.getElementById("demo").innerHTML = x;
+<!--}
+</script>
 
 </head>
 
 <body>
 
-	<img src="pics/error-icon-28.png" alt="Display Picture" id="display_image">
-	
+	<img src="pics/sunset.jpg" alt="Display Picture" id="display_image">
+	<div class="mdl-layout-spacer"></div>
 	<div class = "reaction_choices">
-			
-			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option2">
-				<input type="radio" class="mdl-radio__button" >
-				<span class="mdl-radio__label">Female</span>
-			</label>
 
-			<button class = "choice" onclick="reactionSubmit('ENCOURAGING')">Encouraging</button>
-			<button class = "choice" onclick="reactionSubmit('FUNNY')">Funny</button>
-			<button class = "choice" onclick="reactionSubmit('NEUTRAL')">Neutral</button>
-			<button class = "choice" onclick="reactionSubmit('ANGRY')">Angry</button>
-			<button class = "choice" onclick="reactionSubmit('INAPPROPRIATE')">Inappropriate</button>
-			<button class = "choice" onclick="reactionSubmit('NONSENSE')">Nonsense</button>
-			'Hello Lily
+			<label class="mdl-radio mdl-js-radio" for="option2">
+			    <input type = "radio" id="option2" name="describe" value="encouraging" class = "mdl-radio__button"> 
+				<span class="mdl-radio__label">Encouraging</span>
+			</label>
+			
+			<label class="mdl-radio mdl-js-radio" for="option3">
+			    <input type = "radio" id="option3" name="describe" value="funny" class = "mdl-radio__button"> 
+			    <span class="mdl-radio__label">Funny</span>
+			</label>
+			
+			<label class="mdl-radio mdl-js-radio" for="option4">
+			    <input type = "radio" id="option4" name="describe" value = "neutral" class = "mdl-radio__button"> 
+			    <span class="mdl-radio__label">Neutral</span>
+			</label>
+			
+			<label class="mdl-radio mdl-js-radio" for="option5">
+			    <input type = "radio" id="option5" name="describe" value = "angry" class = "mdl-radio__button"> 
+			    <span class="mdl-radio__label">Angry</span>
+			</label>
+			
+			<label class="mdl-radio mdl-js-radio" for="option6">
+			    <input type = "radio" id="option6" name="describe" value = "inappropriate" class = "mdl-radio__button"> 
+			    <span class="mdl-radio__label">Inappropriate</span>
+			</label>
+			
+			<label class="mdl-radio mdl-js-radio" for="option7">
+			    <input type = "radio" id="option7" name="describe" value = "nonsense" class = "mdl-radio__button"> 
+			    <span class="mdl-radio__label">Nonsense</span>
+			</label>
+			
 	</div>
+	<!--<button onclick="myFunction()">Show Encouraging</button>
+	<p id="demo"></p> -->
 </body>
 </html>
