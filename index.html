@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI Trainer @ Hack Cooper</title>
+<link rel = "stylesheet" href ="master.css">
+<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">	  
+   
+
+</head>
+
+<body>
+
+	<img src="pics/error-icon-28.png" alt="Display Picture" id="display_image">
+	
+	<div class = "reaction_choices">
+			
+			<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option2">
+				<input type="radio" class="mdl-radio__button" >
+				<span class="mdl-radio__label">Female</span>
+			</label>
+
+			<button class = "choice" onclick="reactionSubmit('ENCOURAGING')">Encouraging</button>
+			<button class = "choice" onclick="reactionSubmit('FUNNY')">Funny</button>
+			<button class = "choice" onclick="reactionSubmit('NEUTRAL')">Neutral</button>
+			<button class = "choice" onclick="reactionSubmit('ANGRY')">Angry</button>
+			<button class = "choice" onclick="reactionSubmit('INAPPROPRIATE')">Inappropriate</button>
+			<button class = "choice" onclick="reactionSubmit('NONSENSE')">Nonsense</button>
+	</div>
+</body>
+</html>
