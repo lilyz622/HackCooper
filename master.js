@@ -1,5 +1,3 @@
-console.log('hi');
-
 var imageTree = {
 	1 :{
 		'id' : "1344555446761061116",
@@ -57,6 +55,8 @@ var angryCount = 0;
 var inappropriateCount = 0;
 var nonsenseCount = 0;
 
+var commentData = [];
+
 
 function run(){
 		console.log(imageTree[currentQuestion]['display_src']);
@@ -67,7 +67,7 @@ function run(){
 
 function displayResults()
 {
-	
+     
 }
 
 
@@ -83,19 +83,148 @@ function reactionSubmit(reaction){
 	console.log("Reaction worked");
 	updateRecords(reaction);
 	nextPicture();
-	run();
 	currentQuestion++;
+	run();
+	
 }
 
 function updateRecords(reaction){
 	switch (reaction)
 	{
-		case "encouraging": ++encouragingCount
-		                    break;
-		case "funny": ++funnyCount
+		case "ENCOURAGING": encouragingCount=1;
+		         commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: encouragingCount,
+			funny: 0,
+			neutral: 0,
+			angry: 0,
+			inappropriate: 0,
+			nonsense: 0
+			
+        });
 		              break;
+		case "FUNNY": funnyCount=1
+		commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: 0,
+			funny: funnyCount,
+			neutral: 0,
+			angry: 0,
+			inappropriate: 0,
+			nonsense: 0
+			
+        });
+		              break;
+		case "NEUTRAL": neutralCount = 1
+		commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: 0,
+			funny: 0,
+			neutral: neutralCount,
+			angry: 0,
+			inappropriate: 0,
+			nonsense: 0
+			
+        });
+		              break;
+		case "ANGRY": angryCount = 1
+		commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: 0,
+			funny: 0,
+			neutral: 0,
+			angry: angryCount,
+			inappropriate: 0,
+			nonsense: 0
+			
+        });
+		              break;
+		case "INAPPROPRIATE": inappropriateCount = 1
+		commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: 0,
+			funny: 0,
+			neutral: 0,
+			angry: 0,
+			inappropriate: inappropriateCount,
+			nonsense: 0
+			
+        });
+		              break;
+		case "NONSENSE": nonsenseCount = 1
+		commentData.push({
+            pictureId: imageTree[currentQuestion]['id'],
+            commentId: commentTree[currentQuestion]['id'],
+            encouraging: 0,
+			funny: 0,
+			neutral: 0,
+			angry: 0,
+			inappropriate: 0,
+			nonsense: nonsenseCount
+			
+        });
+		              break;
+		default: return;
 	}
+	
 }
+
+function convertArrayOfObjectsToCSV(args) {
+        var result, ctr, keys, columnDelimiter, lineDelimiter, data;
+
+        data = args.data || null;
+        if (data == null || !data.length) {
+            return null;
+        }
+
+        columnDelimiter = args.columnDelimiter || ',';
+        lineDelimiter = args.lineDelimiter || '\n';
+
+        keys = Object.keys(data[0]);
+
+        result = '';
+        result += keys.join(columnDelimiter);
+        result += lineDelimiter;
+
+        data.forEach(function(item) {
+            ctr = 0;
+            keys.forEach(function(key) {
+                if (ctr > 0) result += columnDelimiter;
+
+                result += item[key];
+                ctr++;
+            });
+            result += lineDelimiter;
+        });
+
+        return result;
+    }
+
+    function downloadCSV(args) {
+        var data, filename, link;
+
+        var csv = convertArrayOfObjectsToCSV({
+            data: commentData
+        });
+        if (csv == null) return;
+
+        filename = args.filename || 'export.csv';
+
+        if (!csv.match(/^data:text\/csv/i)) {
+            csv = 'data:text/csv;charset=utf-8,' + csv;
+        }
+        data = encodeURI(csv);
+
+        link = document.createElement('a');
+        link.setAttribute('href', data);
+        link.setAttribute('download', filename);
+        link.click();
+    }
 
 
 
