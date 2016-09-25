@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>AI Trainer @ HackCooper</title>
+<title>AI Trainer @ HackCooper </title>
 <link rel = "stylesheet" href ="master.css">
 <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
 <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
@@ -17,9 +17,8 @@ div.reaction_choices {
 <style>
 div.comment_space {
     position: fixed;
-	left: 40%;
+	left: 30%;
 	text-align: center;
-	border: 3px solid #73AD21
 }
 </style>
 
@@ -29,16 +28,15 @@ div.comment_space {
 <body>
 	
 	<img src="pics/sunset.jpg" alt="Display Picture" id="display_image">
-	<br></br>
 	<div class="mdl-layout-spacer"></div>
-
-	<div class= "comment_space" id = "display_comment" border=30px >test
+	
+	<div class='wrapper'>
+	<div class="card card-2" id = "display_comment"> test</div>
 	</div>
-	<br></br>
 	
 	<div class = "reaction_choices">
 
-			<label class="mdl-radio mdl-js-radio" for="option2">
+<label class="mdl-radio mdl-js-radio" for="option2">
 			    <input type = "radio" id="option2" onclick='setTimeout(reactionSubmit("ENCOURAGING"),30000)' name="describe" value="encouraging" class = "mdl-radio__button"> 
 				<span class="mdl-radio__label">Encouraging</span>
 			</label>
